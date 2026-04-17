@@ -1,0 +1,85 @@
+.theme-switcher {
+  display: inline-block;
+}
+
+.theme-switcher-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.theme-switcher-label {
+  font-size: var(--body-font-size-xs, 14px);
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  margin-right: 4px;
+}
+
+.theme-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border: 1.5px solid var(--link-color, #3b63fb);
+  border-radius: 2em;
+  background-color: transparent;
+  color: var(--link-color, #3b63fb);
+  font-size: var(--body-font-size-xs, 14px);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.theme-switcher-btn:hover,
+.theme-switcher-btn:focus-visible {
+  background-color: var(--link-color, #3b63fb);
+  color: var(--background-color, white);
+  outline: none;
+}
+
+.theme-switcher-btn:focus-visible {
+  outline: 2px solid var(--link-color, #3b63fb);
+  outline-offset: 2px;
+}
+
+.theme-switcher-btn--active {
+  background-color: var(--link-color, #3b63fb);
+  color: var(--background-color, white);
+  border-color: var(--link-color, #3b63fb);
+  font-weight: 600;
+}
+
+.theme-switcher-btn--active:hover {
+  background-color: var(--link-hover-color, #1d3ecf);
+  border-color: var(--link-hover-color, #1d3ecf);
+  color: var(--background-color, white);
+}
+
+/* theme-specific button colors when a theme is active */
+body[class*='theme-'] .theme-switcher-btn {
+  border-color: var(--link-color);
+  color: var(--link-color);
+}
+
+body[class*='theme-'] .theme-switcher-btn:hover,
+body[class*='theme-'] .theme-switcher-btn:focus-visible {
+  background-color: var(--link-color);
+  color: var(--background-color);
+}
+
+body[class*='theme-'] .theme-switcher-btn--active {
+  background-color: var(--link-color);
+  color: var(--background-color);
+  border-color: var(--link-color);
+}
+
+body[class*='theme-'] .theme-switcher-btn--active:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}

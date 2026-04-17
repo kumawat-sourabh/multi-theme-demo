@@ -23,11 +23,17 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 24px;
+    gap: var(--columns-gap, 24px);
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  /* themed vertical divider between columns */
+  .columns > div > div + div {
+    border-left: 1px solid var(--columns-divider-color, transparent);
+    padding-left: var(--columns-gap, 24px);
   }
 }

@@ -1,0 +1,34 @@
+/*
+ * Ocean Theme — cool blues, calm and professional
+ */
+
+body.theme-ocean {
+  /* colors */
+  --background-color: #e8f4f8;
+  --light-color: #caf0f8;
+  --dark-color: #03045e;
+  --text-color: #1a2e3a;
+  --link-color: #0077b6;
+  --link-hover-color: #023e8a;
+
+  /* block-level tokens — cards */
+  --card-border-color: #90e0ef;
+  --card-bg-color: #ffffff;
+  --card-radius: 12px;
+  --card-shadow: 0 4px 12px rgba(0, 119, 182, 0.15);
+
+  /* block-level tokens — hero */
+  --hero-text-color: #ffffff;
+  --hero-overlay-color: rgba(0, 77, 113, 0.45);
+
+  /* block-level tokens — columns */
+  --columns-divider-color: #90e0ef;
+  --columns-gap: 32px;
+
+  /* buttons */
+  --button-primary-bg: #0077b6;
+  --button-primary-border: #0077b6;
+  --button-primary-color: #ffffff;
+  --button-primary-hover-bg: #023e8a;
+  --button-primary-hover-border: #023e8a;
+}

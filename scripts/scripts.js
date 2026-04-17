@@ -127,12 +127,46 @@ export function decorateMain(main) {
 }
 
 /**
+ * Resolves the active theme name from:
+ * 1. localStorage (user-persisted preference), unless overridden by page metadata
+ * 2. Page metadata theme class (already applied by decorateTemplateAndTheme)
+ *
+ * Priority: page metadata > localStorage
+ * If no page metadata theme is set, localStorage preference is applied.
+ */
+async function resolveAndLoadTheme() {
+  const STORAGE_KEY = 'selected-theme';
+
+  // Check for a theme class already applied by decorateTemplateAndTheme (page metadata)
+  const metaThemeClass = [...document.body.classList].find((c) => c.startsWith('theme-'));
+
+  if (metaThemeClass) {
+    // Page metadata theme takes priority — load its CSS
+    await loadCSS(`${window.hlx.codeBasePath}/styles/themes/${metaThemeClass}.css`);
+    return;
+  }
+
+  // No page-level theme — check localStorage for user's persisted preference
+  try {
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    if (savedTheme) {
+      const themeClass = `theme-${savedTheme}`;
+      document.body.classList.add(themeClass);
+      await loadCSS(`${window.hlx.codeBasePath}/styles/themes/${themeClass}.css`);
+    }
+  } catch (e) {
+    // localStorage unavailable — proceed with no theme
+  }
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  await resolveAndLoadTheme();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

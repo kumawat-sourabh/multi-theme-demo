@@ -1,0 +1,34 @@
+/*
+ * Forest Theme — earthy greens, natural and organic
+ */
+
+body.theme-forest {
+  /* colors */
+  --background-color: #f0f7f0;
+  --light-color: #d8f3dc;
+  --dark-color: #081c15;
+  --text-color: #1a2e1a;
+  --link-color: #2d6a4f;
+  --link-hover-color: #1b4332;
+
+  /* block-level tokens — cards */
+  --card-border-color: #95d5b2;
+  --card-bg-color: #ffffff;
+  --card-radius: 8px;
+  --card-shadow: 0 4px 12px rgba(45, 106, 79, 0.15);
+
+  /* block-level tokens — hero */
+  --hero-text-color: #ffffff;
+  --hero-overlay-color: rgba(8, 28, 21, 0.5);
+
+  /* block-level tokens — columns */
+  --columns-divider-color: #95d5b2;
+  --columns-gap: 28px;
+
+  /* buttons */
+  --button-primary-bg: #2d6a4f;
+  --button-primary-border: #2d6a4f;
+  --button-primary-color: #ffffff;
+  --button-primary-hover-bg: #1b4332;
+  --button-primary-hover-border: #1b4332;
+}
